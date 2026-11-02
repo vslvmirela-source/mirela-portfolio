@@ -10,7 +10,7 @@ const SITE = {
   about: "Mirela Vasileva is a costume designer and stylist working across commercials, film and music videos. Based in Sofia, Bulgaria, she creates distinctive visual worlds through clothing, character and detail."
 };
 const PROJECTS = [
-  {slug:"study-01", title:"PROJECT 01", category:"commercials", type:"Commercial", year:"2026", size:"large", color:"#b6ada4", photo:"", video:"", credits:["Costume Design / Styling — Mirela Vasileva"], description:"Portfolio placeholder — replace with your project."},
+  {slug:"calgon-new-promise", title:"CALGON — NEW PROMISE", category:"commercials", type:"Commercial", year:"", size:"large", color:"#9caaa8", photo:"images/calgon-new-promise.jpg", video:"https://player.vimeo.com/video/1234984546", credits:["Client — Calgon, Vestacy","Agency — BETC","Production Company — Shutterstock Studios","Director — Bram FJ Van Alphen","DOP — Nenad Boroevich","Service Company — handplayed"], description:"Calgon — New Promise"},
   {slug:"study-02", title:"PROJECT 02", category:"films", type:"Film", year:"2026", size:"medium", color:"#99998c", photo:"", video:"", credits:["Costume Design — Mirela Vasileva"], description:"Portfolio placeholder — replace with your project."},
   {slug:"study-03", title:"PROJECT 03", category:"commercials", type:"Commercial", year:"2026", size:"tall", color:"#7a6e65", photo:"", video:"", credits:["Styling — Mirela Vasileva"], description:"Portfolio placeholder — replace with your project."},
   {slug:"study-04", title:"PROJECT 04", category:"music-videos", type:"Music Video", year:"2026", size:"medium", color:"#c6bdad", photo:"", video:"", credits:["Styling — Mirela Vasileva"], description:"Portfolio placeholder — replace with your project."},
