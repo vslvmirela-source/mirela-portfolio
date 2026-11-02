@@ -24,3 +24,23 @@
 @media(hover:none){.tile-overlay{background:linear-gradient(transparent 45%,rgba(0,0,0,.52));}.tile-overlay h2{font-size:16px;}}
 @media(max-width:850px){.site-header{padding:21px 3% 14px;}.intro{padding:35px 3% 24px;}.filters{padding:0 3% 16px;}.portfolio-grid{columns:2;column-gap:6px;padding:0 3% 80px;}.footer{margin:0 3%;}}
 @media(max-width:490px){.intro h1{font-size:clamp(22px,6vw,31px);}.portfolio-grid{columns:1;}.portfolio-grid .tile:nth-child(n){aspect-ratio:16/9;transform:none;}.tile-overlay h2{font-size:19px;}}
+
+/* V4 — three independent equal-width columns, flush at the top.
+   Left and right: equal-height 2:1 landscape frames.
+   Middle: every frame 2.5:1 (20% lower at the same width).
+   Horizontal and vertical gaps reduced from 6px to 3px. */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;columns:auto;column-gap:3px;align-items:start;}
+.portfolio-column{display:flex;flex-direction:column;min-width:0;gap:3px;}
+.portfolio-grid .portfolio-column .tile,
+.portfolio-grid .portfolio-column .tile.large,
+.portfolio-grid .portfolio-column .tile.medium,
+.portfolio-grid .portfolio-column .tile.tall,
+.portfolio-grid .portfolio-column .tile.wide,
+.portfolio-grid .portfolio-column .tile:nth-child(n){aspect-ratio:2/1; margin:0; width:100%;transform:none;}
+.portfolio-grid .portfolio-column-2 .tile:nth-child(n){aspect-ratio:2.5/1;}
+.site-header nav a.active,.filters button.active{color:var(--accent);}
+.filters button.active{border-bottom-color:var(--accent);}
+.filters button:hover,.filters button:focus-visible{color:var(--accent);}
+.intro h1{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;letter-spacing:-.045em;font-size:clamp(19px,2.25vw,32px);}
+@media(max-width:850px){.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;columns:auto;}.portfolio-column{gap:3px;}}
+@media(max-width:490px){.portfolio-grid{grid-template-columns:1fr;gap:3px;}.portfolio-grid .portfolio-column-2 .tile:nth-child(n){aspect-ratio:2.5/1;}}
