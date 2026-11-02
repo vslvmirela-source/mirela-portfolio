@@ -80,3 +80,25 @@
 .portfolio-grid .tile:focus-visible .tile-overlay,
 .portfolio-grid .tile.is-pointer-hover .tile-overlay {opacity:1!important;visibility:visible!important;}
 .portfolio-grid .tile .tile-overlay h2 {color:var(--accent);}
+
+/* Project detail v2 — smaller editorial title, film first, quiet credits and navigation. */
+.project-page{padding-top:35px;}
+.project-page .back{display:inline-block;font-size:11px;color:var(--muted);letter-spacing:.08em;}
+.project-page .back:hover{color:var(--accent);}
+.project-page .project-top{display:flex;align-items:end;gap:24px;justify-content:space-between;margin:17px 0 25px;}
+.project-page .project-title{font-size:clamp(32px,5.3vw,76px);line-height:1;letter-spacing:-.065em;font-weight:600;margin:0;max-width:1050px;}
+.project-page .project-meta{font-size:11px;letter-spacing:.13em;white-space:nowrap;padding:0 0 5px;text-transform:uppercase;}
+.project-page .project-video{width:100%;margin:0;}
+.project-page .video-frame{width:100%;height:auto;aspect-ratio:16/9;margin:0;border:0;display:block;}
+.project-page .project-fallback-image{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;}
+.project-page .project-body{margin:50px auto 65px;}
+.project-page .project-detail-spacer{min-height:1px;}
+.project-page .project-body ul{margin-top:18px;}
+.project-pagination{display:grid;grid-template-columns:1fr 1fr;gap:30px;border-top:1px solid var(--line);padding:25px 0 5px;}
+.project-pagination>div{min-width:0;}
+.project-pagination-next{text-align:right;}
+.project-pagination-label{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);display:block;margin-bottom:9px;}
+.project-pagination a{font-size:clamp(16px,2vw,25px);font-weight:500;letter-spacing:-.035em;line-height:1.2;}
+.project-pagination a:hover{color:var(--accent);}
+@media(max-width:850px){.project-page .project-title{font-size:clamp(30px,6vw,55px)}.project-page .project-top{align-items:start;flex-direction:column;gap:10px;}.project-page .project-body{margin:35px auto 50px;}}
+@media(max-width:490px){.project-pagination{gap:16px;}.project-pagination a{font-size:15px;}.project-page .project-top{margin-bottom:18px;}}
