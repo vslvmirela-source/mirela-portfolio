@@ -57,3 +57,19 @@
 .tile-overlay{background:rgba(0,0,0,.22);}
 @media(hover:hover){.tile-overlay{opacity:0}.tile:hover .tile-overlay,.tile:focus-visible .tile-overlay{opacity:1}}
 .project-hero .art img{object-fit:cover;}
+
+/* CALGON FIX: one centered hover title only; no title on resting tile. */
+.portfolio-grid .tile .tile-overlay { display:flex; align-items:center; justify-content:center; text-align:center; opacity:0; padding:18px; background:rgba(0,0,0,.20); }
+.portfolio-grid .tile .tile-overlay h2 {color:var(--accent); font-size:clamp(15px,2vw,28px); font-weight:500; line-height:1.14; margin:0; letter-spacing:-.03em; text-shadow:0 1px 14px rgba(0,0,0,.6); }
+.portfolio-grid .tile:hover .tile-overlay,.portfolio-grid .tile:focus-visible .tile-overlay {opacity:1;}
+@media (hover:none){ .portfolio-grid .tile .tile-overlay {opacity:0;} .portfolio-grid .tile:focus-visible .tile-overlay{opacity:1;} }
+
+/* Fix: keep exactly one title, hidden until deliberate hover. */
+.portfolio-grid .tile .tile-num,.portfolio-grid .tile .tile-caption {display:none!important;}
+.portfolio-grid .tile .tile-overlay {opacity:0!important;visibility:hidden!important;pointer-events:none!important;}
+@media (hover:hover) and (pointer:fine) {
+ .portfolio-grid .tile:hover .tile-overlay,.portfolio-grid .tile:focus-visible .tile-overlay{opacity:1!important;visibility:visible!important;}
+}
+/* iPad/touch: do not clutter the image with permanent captions; accessible names remain on links. */
+.portfolio-grid .tile .art img {z-index:1;}
+.portfolio-grid .tile .tile-overlay {z-index:2;}
