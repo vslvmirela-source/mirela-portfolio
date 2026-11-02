@@ -20,7 +20,8 @@ function nextAccent(){
   try { sessionStorage.setItem('mirela-accent-index',String(accentIndex)); } catch (_) {}
 }
 nextAccent();
-// Category clicks change the accent immediately; regular links reload and also change it.
+// Test variant 2: each navigation or filter click picks a fresh accent.
+// On full-page navigation the next page picks a fresh accent on load.
 document.addEventListener('click',e=>{
-  if(e.target.closest('.filters [data-filter]')) nextAccent();
+  if(e.target.closest('.filters [data-filter], .site-header nav a')) nextAccent();
 });
