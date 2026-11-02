@@ -25,3 +25,16 @@ nextAccent();
 document.addEventListener('click',e=>{
   if(e.target.closest('.filters [data-filter], .site-header nav a')) nextAccent();
 });
+
+// iPad Safari sometimes reports hover:none even with a connected trackpad or mouse.
+// Pointer events additionally activate the card title for actual pointing devices.
+document.addEventListener('pointerover', event => {
+  if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+  const tile=event.target.closest('.portfolio-grid .tile');
+  if(tile) tile.classList.add('is-pointer-hover');
+});
+document.addEventListener('pointerout', event => {
+  if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+  const tile=event.target.closest('.portfolio-grid .tile');
+  if (tile && !tile.contains(event.relatedTarget)) tile.classList.remove('is-pointer-hover');
+});

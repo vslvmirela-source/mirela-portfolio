@@ -73,3 +73,10 @@
 /* iPad/touch: do not clutter the image with permanent captions; accessible names remain on links. */
 .portfolio-grid .tile .art img {z-index:1;}
 .portfolio-grid .tile .tile-overlay {z-index:2;}
+
+/* iPad pointer/trackpad hover: no permanent labels, reveal centered title on genuine hover. */
+.portfolio-grid .tile .tile-overlay {opacity:0!important;visibility:hidden!important;}
+.portfolio-grid .tile:hover .tile-overlay,
+.portfolio-grid .tile:focus-visible .tile-overlay,
+.portfolio-grid .tile.is-pointer-hover .tile-overlay {opacity:1!important;visibility:visible!important;}
+.portfolio-grid .tile .tile-overlay h2 {color:var(--accent);}
