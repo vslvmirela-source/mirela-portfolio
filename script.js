@@ -9,7 +9,18 @@ function project(slug){let p=PROJECTS.find(q=>q.slug===slug);if(!p){listing();re
 function route(){let params=new URLSearchParams(location.search);let slug=params.get('project');let hash=location.hash.slice(1);if(slug)project(slug);else if(hash==='about')about();else if(hash==='contact')contact();else listing(categories[hash]?hash:'all');window.scrollTo(0,0);nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
 menu.addEventListener('click',()=>{let open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});document.body.addEventListener('click',e=>{const filter=e.target.closest('[data-filter]');if(filter&&filter.tagName==='BUTTON'){location.hash=filter.dataset.filter==='all'?'':filter.dataset.filter;if(filter.dataset.filter==='all'&&location.hash==='')route()}});window.addEventListener('hashchange',route);window.addEventListener('popstate',route);document.querySelector('#year').textContent=new Date().getFullYear();if(SITE.email){let a=document.querySelector('#footer-email');a.href=`mailto:${SITE.email}`}else{document.querySelector('#footer-email').style.display='none'}route();
 
-// Small, intentional colour accent: one palette colour per new page load.
-const accentPalette=['#e36d4d','#8294c8','#c7c947','#d68aa7','#e7a444','#8e70b1'];
-const accent=accentPalette[Math.floor(Math.random()*accentPalette.length)];
-document.documentElement.style.setProperty('--accent',accent);
+// Muted editorial palette. Avoid repeating the same colour on the next interaction.
+const accentPalette=['#af5b64','#667e9e','#b77b61','#89749d','#6b8c90','#a47986'];
+let accentIndex=-1;
+try { accentIndex=Number(sessionStorage.getItem('mirela-accent-index') ?? '-1'); } catch (_) {}
+function nextAccent(){
+  const choices=accentPalette.map((_,i)=>i).filter(i=>i!==accentIndex);
+  accentIndex=choices[Math.floor(Math.random()*choices.length)];
+  document.documentElement.style.setProperty('--accent',accentPalette[accentIndex]);
+  try { sessionStorage.setItem('mirela-accent-index',String(accentIndex)); } catch (_) {}
+}
+nextAccent();
+// Category clicks change the accent immediately; regular links reload and also change it.
+document.addEventListener('click',e=>{
+  if(e.target.closest('.filters [data-filter]')) nextAccent();
+});

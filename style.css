@@ -44,3 +44,9 @@
 .intro h1{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;letter-spacing:-.045em;font-size:clamp(19px,2.25vw,32px);}
 @media(max-width:850px){.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;columns:auto;}.portfolio-column{gap:3px;}}
 @media(max-width:490px){.portfolio-grid{grid-template-columns:1fr;gap:3px;}.portfolio-grid .portfolio-column-2 .tile:nth-child(n){aspect-ratio:2.5/1;}}
+
+/* V5: minimal contemporary sans subtitle; brand lettering and grid stay unchanged. */
+.intro h1{font-family:'DM Sans',Arial,sans-serif;font-style:normal;font-weight:400;letter-spacing:-.052em;font-size:clamp(19px,2.35vw,34px);line-height:1.22;}
+.site-header nav a.active{color:var(--accent);}
+.filters button.active{color:var(--accent);border-bottom-color:var(--accent);}
+.brand-dot{transition:color .2s ease;}
