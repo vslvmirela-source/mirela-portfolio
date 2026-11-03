@@ -168,3 +168,16 @@
 .render-error{padding:60px 3.2%;font-size:17px;}
 @media(max-width:850px){.about-page{padding:52px 5% 80px;}.about-profile{margin-bottom:65px;}}
 @media(max-width:600px){.about-contact-links{gap:20px 32px;}.about-contact h2{margin-bottom:25px;}}
+
+/* V13 — intentionally restrained About layout */
+.about-page{max-width:980px;margin:0 auto;padding:65px 3.2% 95px;min-height:auto;}
+.about-name{font-weight:500;font-size:clamp(30px,3.6vw,49px);line-height:1.15;letter-spacing:-.045em;margin:0 0 38px;}
+.about-profile{max-width:740px;margin:0 0 62px;padding:0;border:0;}
+.about-bio{font-size:clamp(16px,1.55vw,20px);line-height:1.65;letter-spacing:-.012em;font-weight:400;margin:0;}
+.about-profile .about-location{margin-top:23px;color:var(--muted);font-size:10px;letter-spacing:.10em;}
+.about-contact{border:0;padding:0;}
+.about-contact h2{font-weight:500;font-size:clamp(32px,3.9vw,52px);letter-spacing:-.055em;line-height:1.1;margin:0 0 23px;}
+.about-contact-links{display:flex;gap:18px 45px;flex-wrap:wrap;border:0;padding:0;margin:0;}
+.about-contact-link,.about-contact-pending{font-size:clamp(13px,1.15vw,16px);letter-spacing:.02em;flex-direction:column;align-items:start;gap:5px;}
+.about-contact-pending small{font-size:9px;letter-spacing:.05em;}
+@media(max-width:600px){.about-page{padding:48px 5% 75px}.about-name{margin-bottom:26px}.about-profile{margin-bottom:43px}.about-contact-links{gap:24px}}

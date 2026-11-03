@@ -9,7 +9,7 @@ function about(){
   const ig=SITE.instagram ? `<a href="${escapeHTML(SITE.instagram)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">INSTAGRAM</a>` : `<span class="about-contact-pending">INSTAGRAM <small>PROFILE TO BE ADDED</small></span>`;
   const vimeo=SITE.vimeo ? `<a href="${escapeHTML(SITE.vimeo)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">VIMEO</a>` : `<span class="about-contact-pending">VIMEO <small>PROFILE TO BE ADDED</small></span>`;
   app.innerHTML=`<section class="page about-page">
-    <span class="small-label">ABOUT / MIRELA VASILEVA</span>
+    <h1 class="about-name">Mirela Vasileva<span class="about-period">.</span></h1>
     <div class="about-profile">
       <p class="about-bio">${escapeHTML(SITE.about)}</p>
       <p class="about-location">BASED IN SOFIA, BULGARIA · AVAILABLE WORLDWIDE</p>
