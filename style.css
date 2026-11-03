@@ -108,3 +108,14 @@
 .portfolio-grid .tile .tile-overlay h2{font-size:clamp(14px,1.65vw,25px);overflow-wrap:anywhere;}
 .portfolio-grid .tile .art img{object-fit:cover;}
 @media(max-width:490px){.portfolio-grid .portfolio-column .tile{aspect-ratio:2/1!important;}.portfolio-grid .portfolio-column-2 .tile{aspect-ratio:2.5/1!important;}}
+
+/* V6 — editorial rhythm: all columns equal width; 10:5 / 10:4 alternating.
+   Left and right: tall/short. Centre: short/tall. All start at the same top edge. */
+.portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;column-gap:6px;align-items:start;}
+.portfolio-grid .portfolio-column{gap:6px;min-width:0;}
+.portfolio-grid .portfolio-column .tile:nth-child(n){aspect-ratio:2/1!important;}
+.portfolio-grid .portfolio-column-1 .tile:nth-child(even),
+.portfolio-grid .portfolio-column-3 .tile:nth-child(even),
+.portfolio-grid .portfolio-column-2 .tile:nth-child(odd){aspect-ratio:2.5/1!important;}
+@media(max-width:850px){.portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;}.portfolio-grid .portfolio-column{gap:5px;}}
+@media(max-width:490px){.portfolio-grid{grid-template-columns:1fr;gap:6px;}.portfolio-grid .portfolio-column{gap:6px;}}
