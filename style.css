@@ -120,16 +120,16 @@
 @media(max-width:850px){.portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;}.portfolio-grid .portfolio-column{gap:5px;}}
 @media(max-width:490px){.portfolio-grid{grid-template-columns:1fr;gap:6px;}.portfolio-grid .portfolio-column{gap:6px;}}
 
-/* V7 — +12% tile height; preserves the V6 staggered rhythm and 3 equal columns.
-   Tall 10:5 becomes 10:5.6; short 10:4 becomes 10:4.48. */
+/* V8 — refined editorial rhythm. Tall tiles 10:5.6; short tiles 10:4.9.
+   Left/right: tall-short; centre: short-tall. All other site styles unchanged. */
 .portfolio-grid .portfolio-column .tile:nth-child(n){aspect-ratio:10 / 5.6 !important;}
 .portfolio-grid .portfolio-column-1 .tile:nth-child(even),
 .portfolio-grid .portfolio-column-3 .tile:nth-child(even),
-.portfolio-grid .portfolio-column-2 .tile:nth-child(odd){aspect-ratio:10 / 4.48 !important;}
+.portfolio-grid .portfolio-column-2 .tile:nth-child(odd){aspect-ratio:10 / 4.9 !important;}
 /* On phones keep single-column rhythm instead of compressing imagery into narrow stripes. */
 @media(max-width:490px){
  .portfolio-grid .portfolio-column .tile:nth-child(n){aspect-ratio:10 / 5.6 !important;}
  .portfolio-grid .portfolio-column-1 .tile:nth-child(even),
  .portfolio-grid .portfolio-column-3 .tile:nth-child(even),
- .portfolio-grid .portfolio-column-2 .tile:nth-child(odd){aspect-ratio:10 / 4.48 !important;}
+ .portfolio-grid .portfolio-column-2 .tile:nth-child(odd){aspect-ratio:10 / 4.9 !important;}
 }
