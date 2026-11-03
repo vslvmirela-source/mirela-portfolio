@@ -1,5 +1,10 @@
-/* Portfolio content: reorder the entries in PROJECTS to rearrange the grid. */
-const SITE = {email: "", instagram: "", intro: "Costume design & styling for moving images.", about: "Mirela Vasileva is a costume designer and stylist working across commercials, film and music videos. Based in Sofia, Bulgaria, she creates distinctive visual worlds through clothing, character and detail."};
+/* V11 — curated work. Reorder PROJECTS here to change All Work; filters keep the same relative order. */
+const SITE = {
+  email: "", // Add confirmed professional email to enable the email link
+  instagram: "", // Add full Instagram URL (https://instagram.com/...)
+  intro: "Costume design & styling for moving images.",
+  about: "Mirela Vasileva is a Sofia-based costume designer and stylist working across international commercials, feature films and music videos. Her work combines character-led costume design with contemporary styling, creating distinctive visual identities for the screen. She collaborates with directors, production companies and creative teams in Bulgaria and internationally."
+};
 const PROJECTS = [
   {
     "slug": "calgon-new-promise",
@@ -41,68 +46,6 @@ const PROJECTS = [
     ]
   },
   {
-    "slug": "spee-power-caps",
-    "title": "SPEE — POWER CAPS",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/spee.jpg",
-    "video": "https://player.vimeo.com/video/987304753",
-    "credits": [
-      "Client — Henkel",
-      "Agency — TBWA",
-      "Production Company — Goodhouse Films",
-      "Director — J Marlow",
-      "DOP — Adric Watson",
-      "Production Designer — Lyubika Georgieva",
-      "Costume Designer — Mirela Vasileva"
-    ]
-  },
-  {
-    "slug": "paypal-summer-moments",
-    "title": "PAYPAL — SUMMER MOMENTS",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/paypal.jpg",
-    "video": "https://player.vimeo.com/video/937724312",
-    "credits": [
-      "Client — PayPal",
-      "Agency — RAPP, London",
-      "Director — Viktor Ivanov",
-      "DOP — Anton Ognyanov",
-      "Production Designer — Ketty Marinova",
-      "Stylist — Mirela Vasileva",
-      "Costume Assistant — Katrin Dimitrova",
-      "Production — handplayed"
-    ]
-  },
-  {
-    "slug": "gamrfirst",
-    "title": "GAMRFIRST",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/gamrfirst.jpg",
-    "video": "https://player.vimeo.com/video/987306810",
-    "credits": [
-      "Client — Gamrfirst",
-      "Agency — Family",
-      "Production Company — Papaya Films",
-      "Director — Lonan Garcia",
-      "DOP — Rafael Reparaz",
-      "Production Designer — Lyubika Georgieva",
-      "Costume Designer — Mirela Vasileva",
-      "Service Company — Film Fixers Balkans"
-    ]
-  },
-  {
     "slug": "strepsils-01",
     "title": "STREPSILS",
     "category": "commercials",
@@ -112,160 +55,6 @@ const PROJECTS = [
     "color": "#aaa39b",
     "photo": "images/strepsils-one.jpg",
     "video": "https://player.vimeo.com/video/1233343430",
-    "credits": [
-      "Client — Strepsils, Reckitt Benckiser",
-      "Agency — Havas Germany",
-      "Production Company — Shutterstock Studios",
-      "Director — Michael J Ferns",
-      "DOP — Alistair Little",
-      "Service Company — handplayed"
-    ]
-  },
-  {
-    "slug": "yankee-candle-the-scent",
-    "title": "YANKEE CANDLE — THE SCENT YOU’VE BEEN SEEKING",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/yankee.jpg",
-    "video": "https://www.youtube-nocookie.com/embed/tmOqR5rAT3M",
-    "credits": [
-      "Client — Yankee Candle",
-      "Agency — Terri Sandy",
-      "Production Company — Logan",
-      "Director — Pascal Heiduk",
-      "Service Production — Solent Film"
-    ]
-  },
-  {
-    "slug": "aquafresh-matador",
-    "title": "AQUAFRESH — MATADOR",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/aquafresh.jpg",
-    "video": "https://player.vimeo.com/video/1097860193",
-    "credits": [
-      "Client — Aquafresh",
-      "Director — Aidan Gibons",
-      "Production Company — Not Just Any"
-    ]
-  },
-  {
-    "slug": "the-fork-all-set",
-    "title": "THE FORK — YOU ARE ALL SET",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/fork.jpg",
-    "video": "https://www.youtube-nocookie.com/embed/jjFT314X2aU",
-    "credits": [
-      "Client — The Fork",
-      "Agency — Droga5",
-      "Director — Craig Ainsley",
-      "Production Company — Arts and Sciences",
-      "Service Production — Solent Film"
-    ]
-  },
-  {
-    "slug": "tetra-pak-slice-of-life",
-    "title": "TETRA PAK — SLICE OF LIFE",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/tetra.jpg",
-    "video": "https://player.vimeo.com/video/937727638",
-    "credits": [
-      "Client — Tetra Pak",
-      "Production Company — Shutterstock",
-      "Service Production — handplayed",
-      "Director — Vlady Gerasimov",
-      "DOP — Nikola Damov",
-      "Production Designer — Ketty Prohorova",
-      "Styling — Mirela Vasileva",
-      "Styling Assistant — Hristina Taseva",
-      "Producer — Rachael Williams"
-    ]
-  },
-  {
-    "slug": "foo-fighters-window",
-    "title": "FOO FIGHTERS — WINDOW",
-    "category": "music-videos",
-    "type": "Music Video",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/foo-fighters.jpg",
-    "video": "https://player.vimeo.com/video/1233346636",
-    "credits": [
-      "Artist — Foo Fighters",
-      "Starring — Craig Parkinson",
-      "Director — Jake Erland",
-      "Production Company — Park Pictures",
-      "Producer — Chris Murdoch",
-      "DOP — Jack Exton",
-      "Production Designer — Lyubika Georgieva",
-      "Stylist — Mirela Vasileva",
-      "Assistant Stylist — Hristina Taseva",
-      "Service Company — Film Fixers Balkans"
-    ]
-  },
-  {
-    "slug": "ubb-mobile-tvcs",
-    "title": "UBB — MOBILE TVCs",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/ubb.jpg",
-    "video": "https://player.vimeo.com/video/313819138",
-    "credits": [
-      "Client — UBB",
-      "Agency — guts&brains DDB",
-      "Director — Dimitris Georgiev",
-      "DOP — Georgi Andreev",
-      "Art Director — Andrea Popova",
-      "Stylist — Mirela Vasileva",
-      "Producer — Virginia Venkova",
-      "Production — handplayed"
-    ]
-  },
-  {
-    "slug": "devin-spring-directors-cut",
-    "title": "DEVIN — SPRING",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/devin.jpg",
-    "video": "https://player.vimeo.com/video/1051815257",
-    "credits": [
-      "Client — Devin",
-      "Agency — The Smarts",
-      "Production Company — handplayed",
-      "Director — Martin Iliev"
-    ]
-  },
-  {
-    "slug": "strepsils-02",
-    "title": "STREPSILS",
-    "category": "commercials",
-    "type": "Commercial",
-    "year": "",
-    "size": "wide",
-    "color": "#aaa39b",
-    "photo": "images/strepsils-two.jpg",
-    "video": "https://player.vimeo.com/video/1233341259",
     "credits": [
       "Client — Strepsils, Reckitt Benckiser",
       "Agency — Havas Germany",
@@ -298,6 +87,65 @@ const PROJECTS = [
     "color": "#aaa39b"
   },
   {
+    "slug": "paypal-summer-moments",
+    "title": "PAYPAL — SUMMER MOMENTS",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/paypal.jpg",
+    "video": "https://player.vimeo.com/video/937724312",
+    "credits": [
+      "Client — PayPal",
+      "Agency — RAPP, London",
+      "Director — Viktor Ivanov",
+      "DOP — Anton Ognyanov",
+      "Production Designer — Ketty Marinova",
+      "Stylist — Mirela Vasileva",
+      "Costume Assistant — Katrin Dimitrova",
+      "Production — handplayed"
+    ]
+  },
+  {
+    "slug": "spee-power-caps",
+    "title": "SPEE — POWER CAPS",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/spee.jpg",
+    "video": "https://player.vimeo.com/video/987304753",
+    "credits": [
+      "Client — Henkel",
+      "Agency — TBWA",
+      "Production Company — Goodhouse Films",
+      "Director — J Marlow",
+      "DOP — Adric Watson",
+      "Production Designer — Lyubika Georgieva",
+      "Costume Designer — Mirela Vasileva"
+    ]
+  },
+  {
+    "slug": "the-fork-all-set",
+    "title": "THE FORK — YOU ARE ALL SET",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/fork.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/jjFT314X2aU",
+    "credits": [
+      "Client — The Fork",
+      "Agency — Droga5",
+      "Director — Craig Ainsley",
+      "Production Company — Arts and Sciences",
+      "Service Production — Solent Film"
+    ]
+  },
+  {
     "slug": "call-me-shakespeare",
     "title": "CALL ME SHAKESPEARE",
     "type": "Film",
@@ -313,6 +161,61 @@ const PROJECTS = [
     "category": "films",
     "size": "wide",
     "color": "#aaa39b"
+  },
+  {
+    "slug": "tetra-pak-slice-of-life",
+    "title": "TETRA PAK — SLICE OF LIFE",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/tetra.jpg",
+    "video": "https://player.vimeo.com/video/937727638",
+    "credits": [
+      "Client — Tetra Pak",
+      "Production Company — Shutterstock",
+      "Service Production — handplayed",
+      "Director — Vlady Gerasimov",
+      "DOP — Nikola Damov",
+      "Production Designer — Ketty Prohorova",
+      "Styling — Mirela Vasileva",
+      "Styling Assistant — Hristina Taseva",
+      "Producer — Rachael Williams"
+    ]
+  },
+  {
+    "slug": "devin-spring-directors-cut",
+    "title": "DEVIN — SPRING",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/devin.jpg",
+    "video": "https://player.vimeo.com/video/1051815257",
+    "credits": [
+      "Client — Devin",
+      "Agency — The Smarts",
+      "Production Company — handplayed",
+      "Director — Martin Iliev"
+    ]
+  },
+  {
+    "slug": "aquafresh-matador",
+    "title": "AQUAFRESH — MATADOR",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/aquafresh.jpg",
+    "video": "https://player.vimeo.com/video/1097860193",
+    "credits": [
+      "Client — Aquafresh",
+      "Director — Aidan Gibons",
+      "Production Company — Not Just Any"
+    ]
   },
   {
     "slug": "dyad",
@@ -334,6 +237,43 @@ const PROJECTS = [
     "category": "films",
     "size": "wide",
     "color": "#aaa39b"
+  },
+  {
+    "slug": "yankee-candle-the-scent",
+    "title": "YANKEE CANDLE — THE SCENT YOU’VE BEEN SEEKING",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/yankee.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/tmOqR5rAT3M",
+    "credits": [
+      "Client — Yankee Candle",
+      "Agency — Terri Sandy",
+      "Production Company — Logan",
+      "Director — Pascal Heiduk",
+      "Service Production — Solent Film"
+    ]
+  },
+  {
+    "slug": "strepsils-02",
+    "title": "STREPSILS",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/strepsils-two.jpg",
+    "video": "https://player.vimeo.com/video/1233341259",
+    "credits": [
+      "Client — Strepsils, Reckitt Benckiser",
+      "Agency — Havas Germany",
+      "Production Company — Shutterstock Studios",
+      "Director — Michael J Ferns",
+      "DOP — Alistair Little",
+      "Service Company — handplayed"
+    ]
   },
   {
     "slug": "brunch-for-beginners",
@@ -359,6 +299,27 @@ const PROJECTS = [
     "color": "#aaa39b"
   },
   {
+    "slug": "gamrfirst",
+    "title": "GAMRFIRST",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/gamrfirst.jpg",
+    "video": "https://player.vimeo.com/video/987306810",
+    "credits": [
+      "Client — Gamrfirst",
+      "Agency — Family",
+      "Production Company — Papaya Films",
+      "Director — Lonan Garcia",
+      "DOP — Rafael Reparaz",
+      "Production Designer — Lyubika Georgieva",
+      "Costume Designer — Mirela Vasileva",
+      "Service Company — Film Fixers Balkans"
+    ]
+  },
+  {
     "slug": "so-close-away",
     "title": "SO CLOSE AWAY",
     "type": "Short Film",
@@ -374,5 +335,114 @@ const PROJECTS = [
     "category": "films",
     "size": "wide",
     "color": "#aaa39b"
+  },
+  {
+    "slug": "ubb-mobile-tvcs",
+    "title": "UBB — MOBILE TVCs",
+    "category": "commercials",
+    "type": "Commercial",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/ubb.jpg",
+    "video": "https://player.vimeo.com/video/313819138",
+    "credits": [
+      "Client — UBB",
+      "Agency — guts&brains DDB",
+      "Director — Dimitris Georgiev",
+      "DOP — Georgi Andreev",
+      "Art Director — Andrea Popova",
+      "Stylist — Mirela Vasileva",
+      "Producer — Virginia Venkova",
+      "Production — handplayed"
+    ]
+  },
+  {
+    "slug": "foo-fighters-window",
+    "title": "FOO FIGHTERS — WINDOW",
+    "category": "music-videos",
+    "type": "Music Video",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/foo-fighters.jpg",
+    "video": "https://player.vimeo.com/video/1233346636",
+    "credits": [
+      "Artist — Foo Fighters",
+      "Starring — Craig Parkinson",
+      "Director — Jake Erland",
+      "Production Company — Park Pictures",
+      "Producer — Chris Murdoch",
+      "DOP — Jack Exton",
+      "Production Designer — Lyubika Georgieva",
+      "Stylist — Mirela Vasileva",
+      "Assistant Stylist — Hristina Taseva",
+      "Service Company — Film Fixers Balkans"
+    ]
+  },
+  {
+    "slug": "the-gap-adagio-in-g-minor",
+    "title": "THE GAP — ADAGIO IN G MINOR",
+    "category": "music-videos",
+    "type": "Music Video",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/the-gap.jpg",
+    "video": "https://player.vimeo.com/video/461477615",
+    "credits": [
+      "Music — Adagio in G Minor, attributed to Tomaso Albinoni; version by Mac Quayle",
+      "Director & Writer — Dimitris Georgiev",
+      "DOP — Tomislav Mihaylov",
+      "Stylist — Mirela Vasileva",
+      "Editor — Ralitsa Kamenova",
+      "Color Grading — Demetry Vasilev, Nulla.tv",
+      "Makeup — Marina Chaneva, Rosina Georgieva"
+    ]
+  },
+  {
+    "slug": "alma-perfect",
+    "title": "ALMA — PERFECT",
+    "category": "music-videos",
+    "type": "Music Video",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/alma-perfect.jpg",
+    "video": "https://player.vimeo.com/video/461429347",
+    "credits": [
+      "Artist — ALMA",
+      "Director — Dimitris Georgiev",
+      "DOP — Damian Dimitrov",
+      "Production Designer — Andrea Popova",
+      "Stylist — Mirela Vasileva",
+      "Editor — Ralitsa Kamenova",
+      "Color Grading — Damian Dimitrov",
+      "Makeup — Iva Dencheva",
+      "Producer — Ivan Hristov, HandPlayed Productions",
+      "Starring — ALMA, Yasen Atanasov",
+      "Dancers — Elizabeth Yakimova, Petya Koleva"
+    ]
+  },
+  {
+    "slug": "livin-r-dara-nosy-btw",
+    "title": "LIVIN R × DARA × NOSY — BTW",
+    "category": "music-videos",
+    "type": "Music Video",
+    "year": "",
+    "size": "wide",
+    "color": "#aaa39b",
+    "photo": "images/dara-btw.jpg",
+    "video": "https://player.vimeo.com/video/317521017",
+    "credits": [
+      "Artists — LIVIN R, DARA, NOSY",
+      "Director — Dimitris Georgiev",
+      "DOP — Damian Dimitrov",
+      "Production Designer — Andrea Popova",
+      "Stylist — Mirela Vasileva",
+      "Editor — Ralitsa Kamenova",
+      "Color Grading — Damian Dimitrov",
+      "Starring — DARA, Kaloyan Trifonov"
+    ]
   }
 ];

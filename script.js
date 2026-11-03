@@ -3,8 +3,25 @@ function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;',
 function art(p){const photo=p.photo?`<img src="${escapeHTML(p.photo)}?v=portfolio-14-20261103" alt="" loading="lazy">`:'';return `<div class="art" style="--c:${escapeHTML(p.color||'#b6ada4')}">${photo}</div>`}
 function tile(p,i){return `<a class="tile ${escapeHTML(p.size)}" href="?project=${encodeURIComponent(p.slug)}" aria-label="View ${escapeHTML(p.title)}">${art(p)}<span class="tile-num">${String(i+1).padStart(2,'0')} / ${String(PROJECTS.length).padStart(2,'0')}</span><div class="tile-overlay"><h2>${escapeHTML(p.title)}</h2></div></a>`}
 function listing(cat='all'){document.title='Mirela Vasileva — Costume Designer & Stylist';const shown=cat==='all'?PROJECTS:PROJECTS.filter(p=>p.category===cat);app.innerHTML=`<section class="intro"><h1>${escapeHTML(SITE.intro)}</h1></section><div class="filters">${Object.entries(categories).map(([k,v])=>`<button data-filter="${k}" class="${cat===k?'active':''}">${v}</button>`).join('')}</div><section class="portfolio-grid">${shown.length?Array.from({length:3},(_,col)=>`<div class="portfolio-column portfolio-column-${col+1}">${shown.filter((p,i)=>i%3===col).map((p,i)=>tile(p,col+i*3)).join('')}</div>`).join(''):'<p class="empty">Projects coming soon.</p>'}</section>`;nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.filter===cat));}
-function about(){document.title='About — Mirela Vasileva';app.innerHTML=`<section class="page"><span class="small-label">01 / Profile</span><h1 class="page-title">ABOUT.</h1><p class="page-copy">${escapeHTML(SITE.about)}</p><div style="margin-top:85px"><div class="info-block"><span class="small-label">Practice</span><p>Costume Design<br>Fashion Styling<br>Character & Visual Research</p></div><div class="info-block"><span class="small-label">Based in</span><p>Sofia, Bulgaria · Available for projects internationally</p></div></div></section>`;}
-function contact(){document.title='Contact — Mirela Vasileva';let email=SITE.email||'Email address coming soon';let link=SITE.email?`<a class="contact-link" href="mailto:${escapeHTML(SITE.email)}">${escapeHTML(email)} ↗</a>`:`<p class="page-copy">${escapeHTML(email)}</p>`;app.innerHTML=`<section class="page"><span class="small-label">02 / Get in touch</span><h1 class="page-title">LET'S<br>WORK.</h1>${link}${SITE.instagram?`<p style="margin-top:35px"><a href="${escapeHTML(SITE.instagram)}" rel="noopener noreferrer" target="_blank">INSTAGRAM ↗</a></p>`:''}<p style="margin-top:65px" class="small-label">Sofia, Bulgaria · Worldwide</p></section>`;}
+function about(){
+  document.title='About — Mirela Vasileva';
+  const email=SITE.email ? `<a href="mailto:${escapeHTML(SITE.email)}" class="about-contact-link">EMAIL <span>↗</span></a>` : `<span class="about-contact-pending" title="Add email in projects.js">EMAIL <small>ADDRESS TO BE ADDED</small></span>`;
+  const ig=SITE.instagram ? `<a href="${escapeHTML(SITE.instagram)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">INSTAGRAM <span>↗</span></a>` : `<span class="about-contact-pending" title="Add Instagram URL in projects.js">INSTAGRAM <small>PROFILE TO BE ADDED</small></span>`;
+  app.innerHTML=`<section class="page about-page">
+    <span class="small-label">ABOUT / MIRELA VASILEVA</span>
+    <h1 class="about-title">Costume design<br>&amp; styling for<br>moving images<span class="about-period">.</span></h1>
+    <div class="about-profile">
+      <div class="about-profile-label">PROFILE</div>
+      <div class="about-profile-copy"><p>${escapeHTML(SITE.about)}</p><p class="about-location">BASED IN SOFIA, BULGARIA · AVAILABLE WORLDWIDE</p></div>
+    </div>
+    <div class="about-contact" id="get-in-touch">
+      <span class="small-label">GET IN TOUCH</span>
+      <h2>LET’S WORK<span class="about-period">.</span></h2>
+      <div class="about-contact-links">${email}${ig}<a class="about-contact-link" href="index.html">ALL WORK <span>↗</span></a></div>
+    </div>
+  </section>`;
+  nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.view==='about'));
+}
 function project(slug){
   const p=PROJECTS.find(q=>q.slug===slug);
   if(!p){listing();return;}
@@ -35,7 +52,7 @@ function project(slug){
   </section>`;
 }
 
-function route(){let params=new URLSearchParams(location.search);let slug=params.get('project');let hash=location.hash.slice(1);if(slug)project(slug);else if(hash==='about')about();else if(hash==='contact')contact();else listing(categories[hash]?hash:'all');window.scrollTo(0,0);nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+function route(){let params=new URLSearchParams(location.search);let slug=params.get('project');let hash=location.hash.slice(1);if(slug)project(slug);else if(hash==='about')about();else if(hash==='contact')about();else listing(categories[hash]?hash:'all');window.scrollTo(0,0);nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
 menu.addEventListener('click',()=>{let open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});document.body.addEventListener('click',e=>{const filter=e.target.closest('[data-filter]');if(filter&&filter.tagName==='BUTTON'){location.hash=filter.dataset.filter==='all'?'':filter.dataset.filter;if(filter.dataset.filter==='all'&&location.hash==='')route()}});window.addEventListener('hashchange',route);window.addEventListener('popstate',route);document.querySelector('#year').textContent=new Date().getFullYear();if(SITE.email){let a=document.querySelector('#footer-email');a.href=`mailto:${SITE.email}`}else{document.querySelector('#footer-email').style.display='none'}route();
 
 // Muted editorial palette. Avoid repeating the same colour on the next interaction.
