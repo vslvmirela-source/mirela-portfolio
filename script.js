@@ -5,23 +5,24 @@ function tile(p,i){return `<a class="tile ${escapeHTML(p.size)}" href="?project=
 function listing(cat='all'){document.title='Mirela Vasileva — Costume Designer & Stylist';const shown=cat==='all'?PROJECTS:PROJECTS.filter(p=>p.category===cat);app.innerHTML=`<section class="intro"><h1>${escapeHTML(SITE.intro)}</h1></section><div class="filters">${Object.entries(categories).map(([k,v])=>`<button data-filter="${k}" class="${cat===k?'active':''}">${v}</button>`).join('')}</div><section class="portfolio-grid">${shown.length?Array.from({length:3},(_,col)=>`<div class="portfolio-column portfolio-column-${col+1}">${shown.filter((p,i)=>i%3===col).map((p,i)=>tile(p,col+i*3)).join('')}</div>`).join(''):'<p class="empty">Projects coming soon.</p>'}</section>`;nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.filter===cat));}
 function about(){
   document.title='About — Mirela Vasileva';
-  const email=SITE.email ? `<a href="mailto:${escapeHTML(SITE.email)}" class="about-contact-link">EMAIL <span>↗</span></a>` : `<span class="about-contact-pending" title="Add email in projects.js">EMAIL <small>ADDRESS TO BE ADDED</small></span>`;
-  const ig=SITE.instagram ? `<a href="${escapeHTML(SITE.instagram)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">INSTAGRAM <span>↗</span></a>` : `<span class="about-contact-pending" title="Add Instagram URL in projects.js">INSTAGRAM <small>PROFILE TO BE ADDED</small></span>`;
+  const email=SITE.email ? `<a href="mailto:${escapeHTML(SITE.email)}" class="about-contact-link">EMAIL</a>` : `<span class="about-contact-pending">EMAIL <small>ADDRESS TO BE ADDED</small></span>`;
+  const ig=SITE.instagram ? `<a href="${escapeHTML(SITE.instagram)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">INSTAGRAM</a>` : `<span class="about-contact-pending">INSTAGRAM <small>PROFILE TO BE ADDED</small></span>`;
+  const vimeo=SITE.vimeo ? `<a href="${escapeHTML(SITE.vimeo)}" class="about-contact-link" rel="noopener noreferrer" target="_blank">VIMEO</a>` : `<span class="about-contact-pending">VIMEO <small>PROFILE TO BE ADDED</small></span>`;
   app.innerHTML=`<section class="page about-page">
     <span class="small-label">ABOUT / MIRELA VASILEVA</span>
-    <h1 class="about-title">Costume design<br>&amp; styling for<br>moving images<span class="about-period">.</span></h1>
     <div class="about-profile">
-      <div class="about-profile-label">PROFILE</div>
-      <div class="about-profile-copy"><p>${escapeHTML(SITE.about)}</p><p class="about-location">BASED IN SOFIA, BULGARIA · AVAILABLE WORLDWIDE</p></div>
+      <p class="about-bio">${escapeHTML(SITE.about)}</p>
+      <p class="about-location">BASED IN SOFIA, BULGARIA · AVAILABLE WORLDWIDE</p>
     </div>
     <div class="about-contact" id="get-in-touch">
-      <span class="small-label">GET IN TOUCH</span>
       <h2>LET’S WORK<span class="about-period">.</span></h2>
-      <div class="about-contact-links">${email}${ig}<a class="about-contact-link" href="index.html">ALL WORK <span>↗</span></a></div>
+      <div class="about-contact-links">${email}${ig}${vimeo}</div>
     </div>
+    <div class="about-photo-space" aria-hidden="true"></div>
   </section>`;
   nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.dataset.view==='about'));
 }
+
 function project(slug){
   const p=PROJECTS.find(q=>q.slug===slug);
   if(!p){listing();return;}
@@ -52,7 +53,7 @@ function project(slug){
   </section>`;
 }
 
-function route(){let params=new URLSearchParams(location.search);let slug=params.get('project');let hash=location.hash.slice(1);if(slug)project(slug);else if(hash==='about')about();else if(hash==='contact')about();else listing(categories[hash]?hash:'all');window.scrollTo(0,0);nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+function route(){let params=new URLSearchParams(location.search);let slug=params.get('project');let hash=decodeURIComponent(location.hash.slice(1)).toLowerCase();try{if(slug)project(slug);else if(hash==='about'||hash==='contact')about();else listing(Object.prototype.hasOwnProperty.call(categories,hash)?hash:'all');}catch(err){console.error('Portfolio rendering error:',err);app.innerHTML='<p class="render-error">Unable to show the portfolio. Please reload the page.</p>';}window.scrollTo(0,0);nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
 menu.addEventListener('click',()=>{let open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});document.body.addEventListener('click',e=>{const filter=e.target.closest('[data-filter]');if(filter&&filter.tagName==='BUTTON'){location.hash=filter.dataset.filter==='all'?'':filter.dataset.filter;if(filter.dataset.filter==='all'&&location.hash==='')route()}});window.addEventListener('hashchange',route);window.addEventListener('popstate',route);document.querySelector('#year').textContent=new Date().getFullYear();const footerEmail=document.querySelector('#footer-email');if(footerEmail){if(SITE.email){footerEmail.href=`mailto:${SITE.email}`}else{footerEmail.style.display='none'}}route();
 
 // Muted editorial palette. Avoid repeating the same colour on the next interaction.
@@ -83,4 +84,12 @@ document.addEventListener('pointerout', event => {
   if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
   const tile=event.target.closest('.portfolio-grid .tile');
   if (tile && !tile.contains(event.relatedTarget)) tile.classList.remove('is-pointer-hover');
+});
+
+// V12: explicit All Work handling; Safari can preserve an earlier fragment during navigation.
+document.addEventListener('click', e => {
+  const link=e.target.closest('a[data-filter="all"]');
+  if(link){e.preventDefault();history.pushState(null,'',location.pathname);route();return;}
+  const button=e.target.closest('button[data-filter="all"]');
+  if(button){history.replaceState(null,'',location.pathname);route();}
 });

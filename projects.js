@@ -2,6 +2,7 @@
 const SITE = {
   email: "", // Add confirmed professional email to enable the email link
   instagram: "", // Add full Instagram URL (https://instagram.com/...)
+  vimeo: "", // Add full Vimeo profile URL
   intro: "Costume design & styling for moving images.",
   about: "Mirela Vasileva is a Sofia-based costume designer and stylist working across international commercials, feature films and music videos. Her work combines character-led costume design with contemporary styling, creating distinctive visual identities for the screen. She collaborates with directors, production companies and creative teams in Bulgaria and internationally."
 };
