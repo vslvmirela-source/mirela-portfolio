@@ -274,5 +274,105 @@ const PROJECTS = [
       "DOP — Alistair Little",
       "Service Company — handplayed"
     ]
+  },
+  {
+    "slug": "a-dose-of-happiness",
+    "title": "A DOSE OF HAPPINESS",
+    "type": "Feature Film",
+    "year": "2019",
+    "photo": "images/dose-of-happiness.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/l08wBPBIqZE",
+    "credits": [
+      "Original Title — Доза щастие",
+      "Director & Screenwriter — Yana Titova",
+      "DOP — Martin Balkanski",
+      "Production Designer — Ivelina Mineva",
+      "Costume Designer — Mirela Vasileva",
+      "Starring — Valentina Karoleva, Dimitar Nikolov, Alexander Alexiev",
+      "Music — Christopher Barnett",
+      "Editor — Bohos Topakbashiyan",
+      "Producers — Alexander Alexiev, Nikolay Stoichkov"
+    ],
+    "category": "films",
+    "size": "wide",
+    "color": "#aaa39b"
+  },
+  {
+    "slug": "call-me-shakespeare",
+    "title": "CALL ME SHAKESPEARE",
+    "type": "Film",
+    "year": "",
+    "photo": "images/call-me-shakespeare.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/lWXwddpIp3A",
+    "credits": [
+      "Original Title — Shakespeare Like a Street Dog",
+      "Director & Writer — Valeri Yordanov",
+      "Starring — Zachary Baharov, Doroteya Toleva, Eleonora Ivanova",
+      "Costume Designer — Mirela Vasileva"
+    ],
+    "category": "films",
+    "size": "wide",
+    "color": "#aaa39b"
+  },
+  {
+    "slug": "dyad",
+    "title": "DYAD",
+    "type": "Feature Film",
+    "year": "",
+    "photo": "images/dyad.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/Qvhg3Nkvr9c",
+    "credits": [
+      "Original Title — Диада",
+      "Director & Screenwriter — Yana Titova",
+      "DOP — Martin Balkanski",
+      "Editor — Bohos Topakbashiyan",
+      "Producers — Vanya Raynova, Alexander Alexiev, Nikolay Stoichkov",
+      "Production Companies — Portokal, NO BLINK Pictures",
+      "Starring — Margarita Stoykova, Petra Tsarnorechka, Silvia Lulcheva, Ivan Barnev, Vasil Binev, Tsvetan Alexiev, Irmena Chichikova, Zhaklin Docheva, Stoyan Doychev",
+      "Costume Designer — Mirela Vasileva"
+    ],
+    "category": "films",
+    "size": "wide",
+    "color": "#aaa39b"
+  },
+  {
+    "slug": "brunch-for-beginners",
+    "title": "BRUNCH FOR BEGINNERS",
+    "type": "Feature Film",
+    "year": "",
+    "photo": "images/brunch-for-beginners.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/j7wC-4h1tys",
+    "credits": [
+      "Director — Yana Titova",
+      "Screenwriters — Yana Titova, Viktoria Radoslavova",
+      "DOP — Martin Balkanski",
+      "Production Designer — Ivelina Mineva",
+      "Costume Designer — Mirela Vasileva",
+      "Editor — Bohos Topakbashiyan",
+      "Music — Grafa",
+      "Producers — Alexander Alexiev, Nikolay Stoichkov",
+      "Production Company — NO BLINK Pictures",
+      "Starring — Orlin Pavlov, Valentina Karoleva, Alexandra Sarchadjieva, Stiliyan Stoyanov, Zhaklin Docheva, Aya Alexiev, Alina Dancheva"
+    ],
+    "category": "films",
+    "size": "wide",
+    "color": "#aaa39b"
+  },
+  {
+    "slug": "so-close-away",
+    "title": "SO CLOSE AWAY",
+    "type": "Short Film",
+    "year": "",
+    "photo": "images/so-close-away.jpg",
+    "video": "https://player.vimeo.com/video/461446015",
+    "credits": [
+      "Director — Dimitris Georgiev",
+      "Writers — Mariy Rosen, Dimitris Georgiev",
+      "Starring — Stoyan Doychev, Dimitar Ivanov, Borislav Chouchkov",
+      "Costume Designer — Mirela Vasileva"
+    ],
+    "category": "films",
+    "size": "wide",
+    "color": "#aaa39b"
   }
 ];
