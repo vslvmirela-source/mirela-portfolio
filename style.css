@@ -102,3 +102,9 @@
 .project-pagination a:hover{color:var(--accent);}
 @media(max-width:850px){.project-page .project-title{font-size:clamp(30px,6vw,55px)}.project-page .project-top{align-items:start;flex-direction:column;gap:10px;}.project-page .project-body{margin:35px auto 50px;}}
 @media(max-width:490px){.project-pagination{gap:16px;}.project-pagination a{font-size:15px;}.project-page .project-top{margin-bottom:18px;}}
+
+/* 14-project release: preserve cinematic strip grid and clean hover */
+.portfolio-grid .tile .tile-overlay{background:rgba(0,0,0,.27);}
+.portfolio-grid .tile .tile-overlay h2{font-size:clamp(14px,1.65vw,25px);overflow-wrap:anywhere;}
+.portfolio-grid .tile .art img{object-fit:cover;}
+@media(max-width:490px){.portfolio-grid .portfolio-column .tile{aspect-ratio:2/1!important;}.portfolio-grid .portfolio-column-2 .tile{aspect-ratio:2.5/1!important;}}
